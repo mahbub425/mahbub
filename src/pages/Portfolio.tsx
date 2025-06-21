@@ -66,7 +66,7 @@ const projects = [
 {
     id: 4,
     image: "https://i.ibb.co/5ZQ475G/Screenshot-2025-06-21-162853.png",
-    category: "Marketing & Branding Skills",
+    category: "Marketing & Branding",
     title: "OPL Social Media Management",
     description: "Managed OPL's social media content, regularly posting updates and job circulars on the OPL website's social media pages. Achieved 4,300+ organic followers on LinkedIn and 700+ on Facebook. This is an ongoing project.",
     tags: ["Social Media", "Content Management", "LinkedIn", "Facebook", "Branding"],
