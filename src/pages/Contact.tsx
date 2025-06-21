@@ -210,10 +210,10 @@ const Contact = () => {
   }
 
   return (
-    <div className="min-h-screen" style={{ fontFamily: "'Jost', sans-serif", fontWeight: 500 }}>
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100" style={{ fontFamily: "'Jost', sans-serif", fontWeight: 500 }}>
       <ScrollFadeIn>
         {/* Hero Section */}
-        <section className="relative pt-20 pb-16">
+        <section className="relative pt-20 pb-16 bg-gradient-to-br from-blue-200 via-white to-purple-200 dark:from-gray-800 dark:via-gray-900 dark:to-gray-800">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
               <h1
@@ -228,7 +228,7 @@ const Contact = () => {
                   GET IN TOUCH
                 </span>
               </h1>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
                 Ready to take your career to the next level? Let's discuss how I can help you
                 achieve your professional goals and unlock new opportunities.
               </p>
@@ -237,32 +237,32 @@ const Contact = () => {
         </section>
 
         {/* Contact Form and Info */}
-        <section className="py-16">
+        <section className="py-16 bg-white dark:bg-gray-950">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
               {/* Contact Form */}
               <div className="lg:col-span-2">
-                <Card className="shadow-2xl border-0 bg-white/80 backdrop-blur-lg rounded-3xl">
+                <Card className="shadow-2xl border-0 bg-white/80 dark:bg-gray-800/90 backdrop-blur-lg rounded-3xl">
                   <CardHeader>
-                    <CardTitle className="text-2xl font-bold text-blue-900" style={{ fontFamily: "'Jost', sans-serif" }}>Send Me a Message</CardTitle>
-                    <CardDescription className="text-base text-gray-700">Fill out the form below and I'll get back to you as soon as possible.</CardDescription>
+                    <CardTitle className="text-2xl font-bold text-blue-900 dark:text-blue-200" style={{ fontFamily: "'Jost', sans-serif" }}>Send Me a Message</CardTitle>
+                    <CardDescription className="text-base text-gray-700 dark:text-gray-300">Fill out the form below and I'll get back to you as soon as possible.</CardDescription>
                   </CardHeader>
                   <CardContent>
                     <form onSubmit={handleSubmit} className="space-y-8">
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         <div className="space-y-2">
-                          <Label htmlFor="name" className="text-blue-900 font-semibold">Full Name *</Label>
+                          <Label htmlFor="name" className="text-blue-900 dark:text-blue-200 font-semibold">Full Name *</Label>
                           <Input
                             id="name"
                             value={formData.name}
                             onChange={(e) => handleInputChange("name", e.target.value)}
                             placeholder="Your full name"
                             required
-                            className="rounded-xl border-blue-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 bg-white/90 shadow-sm px-4 py-3 text-lg"
+                            className="rounded-xl border-blue-200 dark:border-blue-700 focus:border-blue-500 dark:focus:border-blue-400 focus:ring-2 focus:ring-blue-200 dark:focus:ring-blue-800 bg-white/90 dark:bg-gray-900 shadow-sm px-4 py-3 text-lg text-gray-900 dark:text-gray-100"
                           />
                         </div>
                         <div className="space-y-2">
-                          <Label htmlFor="email" className="text-blue-900 font-semibold">Email Address *</Label>
+                          <Label htmlFor="email" className="text-blue-900 dark:text-blue-200 font-semibold">Email Address *</Label>
                           <Input
                             id="email"
                             type="email"
@@ -270,32 +270,32 @@ const Contact = () => {
                             onChange={(e) => handleInputChange("email", e.target.value)}
                             placeholder="your.email@example.com"
                             required
-                            className="rounded-xl border-blue-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 bg-white/90 shadow-sm px-4 py-3 text-lg"
+                            className="rounded-xl border-blue-200 dark:border-blue-700 focus:border-blue-500 dark:focus:border-blue-400 focus:ring-2 focus:ring-blue-200 dark:focus:ring-blue-800 bg-white/90 dark:bg-gray-900 shadow-sm px-4 py-3 text-lg text-gray-900 dark:text-gray-100"
                           />
                         </div>
                       </div>
 
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         <div className="space-y-2">
-                          <Label htmlFor="subject" className="text-blue-900 font-semibold">Subject *</Label>
+                          <Label htmlFor="subject" className="text-blue-900 dark:text-blue-200 font-semibold">Subject *</Label>
                           <Input
                             id="subject"
                             value={formData.subject}
                             onChange={(e) => handleInputChange("subject", e.target.value)}
                             placeholder="Brief subject of your inquiry"
                             required
-                            className="rounded-xl border-blue-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 bg-white/90 shadow-sm px-4 py-3 text-lg"
+                            className="rounded-xl border-blue-200 dark:border-blue-700 focus:border-blue-500 dark:focus:border-blue-400 focus:ring-2 focus:ring-blue-200 dark:focus:ring-blue-800 bg-white/90 dark:bg-gray-900 shadow-sm px-4 py-3 text-lg text-gray-900 dark:text-gray-100"
                           />
                         </div>
                         <div className="space-y-2">
-                          <Label htmlFor="service" className="text-blue-900 font-semibold">Service Interested In *</Label>
+                          <Label htmlFor="service" className="text-blue-900 dark:text-blue-200 font-semibold">Service Interested In *</Label>
                           <Select onValueChange={(value) => handleInputChange("service", value)} required>
-                            <SelectTrigger className="rounded-xl border-blue-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 bg-white/90 shadow-sm px-4 py-3 text-lg">
+                            <SelectTrigger className="rounded-xl border-blue-200 dark:border-blue-700 focus:border-blue-500 dark:focus:border-blue-400 focus:ring-2 focus:ring-blue-200 dark:focus:ring-blue-800 bg-white/90 dark:bg-gray-900 shadow-sm px-4 py-3 text-lg text-gray-900 dark:text-gray-100">
                               <SelectValue placeholder="Select a service" />
                             </SelectTrigger>
-                            <SelectContent>
+                            <SelectContent className="dark:bg-gray-900 dark:text-gray-100">
                               {services.map((service) => (
-                                <SelectItem key={service} value={service} className="text-blue-900">
+                                <SelectItem key={service} value={service} className="text-blue-900 dark:text-blue-200">
                                   {service}
                                 </SelectItem>
                               ))}
@@ -305,13 +305,13 @@ const Contact = () => {
                       </div>
 
                       <div className="space-y-2">
-                        <Label htmlFor="message" className="text-blue-900 font-semibold">Message</Label>
+                        <Label htmlFor="message" className="text-blue-900 dark:text-blue-200 font-semibold">Message</Label>
                         <Textarea
                           id="message"
                           value={formData.message}
                           onChange={(e) => handleInputChange("message", e.target.value)}
                           placeholder="Tell me more about your goals, challenges, or questions..."
-                          className="min-h-[120px] rounded-xl border-blue-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 bg-white/90 shadow-sm px-4 py-3 text-lg"
+                          className="min-h-[120px] rounded-xl border-blue-200 dark:border-blue-700 focus:border-blue-500 dark:focus:border-blue-400 focus:ring-2 focus:ring-blue-200 dark:focus:ring-blue-800 bg-white/90 dark:bg-gray-900 shadow-sm px-4 py-3 text-lg text-gray-900 dark:text-gray-100"
                         />
                       </div>
 
@@ -336,24 +336,24 @@ const Contact = () => {
 
               {/* Contact Information */}
               <div className="space-y-8">
-                <Card className="shadow-lg border-0 bg-white/80 backdrop-blur-lg rounded-3xl">
+                <Card className="shadow-lg border-0 bg-white/80 dark:bg-gray-800/90 backdrop-blur-lg rounded-3xl">
                   <CardHeader>
-                    <CardTitle className="text-2xl font-bold text-purple-900 mb-2" style={{ fontFamily: "'Jost', sans-serif", letterSpacing: 1 }}>
+                    <CardTitle className="text-2xl font-bold text-purple-900 dark:text-purple-200 mb-2" style={{ fontFamily: "'Jost', sans-serif", letterSpacing: 1 }}>
                       Contact Information
                     </CardTitle>
-                    <CardDescription className="text-base text-gray-700" style={{ fontFamily: "'Jost', sans-serif" }}>
+                    <CardDescription className="text-base text-gray-700 dark:text-gray-300" style={{ fontFamily: "'Jost', sans-serif" }}>
                       Multiple ways to reach me for your convenience
                     </CardDescription>
                   </CardHeader>
                   <CardContent className="space-y-6">
                     {contactInfo.map((info, index) => (
-                      <div key={index} className="flex items-center gap-4 bg-gradient-to-r from-blue-100 to-purple-100 rounded-xl p-4 shadow-md">
+                      <div key={index} className="flex items-center gap-4 bg-gradient-to-r from-blue-100 to-purple-100 dark:from-gray-900 dark:to-gray-800 rounded-xl p-4 shadow-md">
                         <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center flex-shrink-0 shadow-lg">
                           <info.icon className="h-6 w-6 text-white" />
                         </div>
                         <div>
-                          <h3 className="font-semibold text-blue-900 text-lg" style={{ fontFamily: "'Jost', sans-serif" }}>{info.title}</h3>
-                          <p className="text-base text-gray-900 font-medium" style={{ fontFamily: "'Jost', sans-serif" }}>{info.value}</p>
+                          <h3 className="font-semibold text-blue-900 dark:text-blue-200 text-lg" style={{ fontFamily: "'Jost', sans-serif" }}>{info.title}</h3>
+                          <p className="text-base text-gray-900 dark:text-gray-100 font-medium" style={{ fontFamily: "'Jost', sans-serif" }}>{info.value}</p>
                         </div>
                       </div>
                     ))}

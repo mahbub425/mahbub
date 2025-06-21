@@ -201,10 +201,10 @@ const Services = () => {
   };
 
   return (
-    <div className="min-h-screen" style={{ fontFamily: "'Jost', sans-serif", fontWeight: 500 }}>
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100" style={{ fontFamily: "'Jost', sans-serif", fontWeight: 500 }}>
       <ScrollFadeIn>
         {/* Hero Section */}
-        <section className="relative bg-gradient-to-br from-blue-200 via-white to-purple-200 pt-20 pb-32">
+        <section className="relative bg-gradient-to-br from-blue-200 via-white to-purple-200 dark:from-gray-800 dark:via-gray-900 dark:to-gray-800 pt-20 pb-32">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
               <h1
@@ -219,7 +219,7 @@ const Services = () => {
                   SERVICES
                 </span>
               </h1>
-              <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+              <p className="text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
                 Accelerate your career growth with personalized consulting services designed to help you
                 achieve your professional goals and unlock your full potential.
               </p>
@@ -228,11 +228,11 @@ const Services = () => {
         </section>
 
         {/* Detailed Services */}
-        <section className="py-16 bg-gray-50">
+        <section className="py-16 bg-gray-50 dark:bg-gray-900">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="space-y-16">
               {updatedServices.map((service, index) => (
-                <div key={index} className="bg-gradient-to-br from-white via-blue-50 to-purple-50 rounded-3xl p-10 shadow-2xl border border-blue-100 hover:scale-[1.02] transition-transform duration-300">
+                <div key={index} className="bg-gradient-to-br from-white via-blue-50 to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 rounded-3xl p-10 shadow-2xl border border-blue-100 dark:border-gray-800 hover:scale-[1.02] transition-transform duration-300">
                   <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
                     <div className="lg:col-span-2 space-y-6">
                       <div className="flex items-center space-x-4">
@@ -240,7 +240,7 @@ const Services = () => {
                           {service.icon}
                         </div>
                         <div>
-                          <h3 className="text-3xl text-gray-900 tracking-tight mb-1" style={{ fontFamily: "'Jost', sans-serif", fontWeight: 700 }}>
+                          <h3 className="text-3xl text-gray-900 dark:text-gray-100 tracking-tight mb-1" style={{ fontFamily: "'Jost', sans-serif", fontWeight: 700 }}>
                             {service.title}
                           </h3>
                           <div className="flex items-center space-x-4 mt-2">
@@ -248,20 +248,20 @@ const Services = () => {
                               <Clock className="h-4 w-4 mr-1" />
                               {service.duration}
                             </Badge>
-                            <Badge variant="outline" className="bg-green-100 text-green-700 border-green-300">
+                            <Badge variant="outline" className="bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 border-green-300 dark:border-green-700">
                               <DollarSign className="h-4 w-4 mr-1" />
                               {service.pricing}
                             </Badge>
                           </div>
                         </div>
                       </div>
-                      <p className="text-gray-700 text-lg leading-relaxed border-l-4 border-blue-400 pl-4 bg-blue-50/50 py-2">{service.longDescription}</p>
+                      <p className="text-gray-700 dark:text-gray-200 text-lg leading-relaxed border-l-4 border-blue-400 dark:border-blue-500 pl-4 bg-blue-50/50 dark:bg-gray-800/50 py-2">{service.longDescription}</p>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         <div>
-                          <h4 className="font-semibold text-blue-700 mb-3 flex items-center gap-2"><TrendingUp className="h-5 w-5" /> What's Included</h4>
+                          <h4 className="font-semibold text-blue-700 dark:text-blue-300 mb-3 flex items-center gap-2"><TrendingUp className="h-5 w-5" /> What's Included</h4>
                           <div className="flex flex-col gap-3">
                             {service.features.map((feature, idx) => (
-                              <div key={idx} className="flex items-center gap-3 text-blue-900 font-medium bg-blue-100/60 rounded-lg px-3 py-2 shadow-sm">
+                              <div key={idx} className="flex items-center gap-3 text-blue-900 dark:text-blue-200 font-medium bg-blue-100/60 dark:bg-gray-900/60 rounded-lg px-3 py-2 shadow-sm">
                                 {featureIcons[feature] || <Brain className="h-5 w-5 text-blue-500" />} 
                                 <span>{feature}</span>
                               </div>
@@ -269,10 +269,10 @@ const Services = () => {
                           </div>
                         </div>
                         <div>
-                          <h4 className="font-semibold text-purple-700 mb-3 flex items-center gap-2"><Award className="h-5 w-5" /> Key Benefits</h4>
+                          <h4 className="font-semibold text-purple-700 dark:text-purple-300 mb-3 flex items-center gap-2"><Award className="h-5 w-5" /> Key Benefits</h4>
                           <div className="flex flex-col gap-3">
                             {service.benefits.map((benefit, idx) => (
-                              <div key={idx} className="flex items-center gap-3 text-purple-900 font-medium bg-purple-100/60 rounded-lg px-3 py-2 shadow-sm">
+                              <div key={idx} className="flex items-center gap-3 text-purple-900 dark:text-purple-200 font-medium bg-purple-100/60 dark:bg-gray-900/60 rounded-lg px-3 py-2 shadow-sm">
                                 {benefitIcons[benefit] || <Award className="h-5 w-5 text-purple-500" />} 
                                 <span>{benefit}</span>
                               </div>
@@ -282,10 +282,10 @@ const Services = () => {
                       </div>
                     </div>
                     <div className="flex flex-col items-center justify-center gap-8">
-                      <div className="bg-gradient-to-r from-blue-100 to-purple-100 rounded-2xl p-6 shadow-inner flex flex-col items-center">
+                      <div className="bg-gradient-to-r from-blue-100 to-purple-100 dark:from-gray-900 dark:to-gray-800 rounded-2xl p-6 shadow-inner flex flex-col items-center">
                         <Brain className="h-10 w-10 text-blue-500 mb-2 animate-pulse" />
-                        <p className="text-lg font-semibold text-blue-900 text-center">Insight</p>
-                        <p className="text-gray-700 text-center text-sm mt-2">
+                        <p className="text-lg font-semibold text-blue-900 dark:text-blue-200 text-center">Insight</p>
+                        <p className="text-gray-700 dark:text-gray-200 text-center text-sm mt-2">
                           {aiInsights[service.id]}
                         </p>
                       </div>
@@ -303,7 +303,7 @@ const Services = () => {
         </section>
 
         {/* Process Section */}
-        <section className="py-20 bg-gradient-to-br from-purple-50 via-blue-50 to-white">
+        <section className="py-20 bg-gradient-to-br from-purple-50 via-blue-50 to-white dark:from-gray-900 dark:via-gray-950 dark:to-gray-900">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h1
@@ -318,21 +318,21 @@ const Services = () => {
                   How It Works
                 </span>
               </h1>
-              <p className="text-lg text-gray-700 max-w-2xl mx-auto">
+              <p className="text-lg text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
                 My structured approach ensures maximum value and successful outcomes
               </p>
             </div>
             <div className="flex flex-col md:flex-row items-center justify-center gap-10">
               {processSteps.map((step, index) => (
-                <div key={index} className="relative flex flex-col items-center bg-white rounded-2xl shadow-xl px-8 py-10 w-full max-w-xs border-t-4 border-blue-400 transition-all duration-300 min-h-[340px] h-[340px] hover:scale-105 hover:shadow-2xl hover:border-purple-500 cursor-pointer">
-                  <div className="flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 shadow-lg mb-4 z-10 border-4 border-white aspect-square">
+                <div key={index} className="relative flex flex-col items-center bg-white dark:bg-gray-800 rounded-2xl shadow-xl px-8 py-10 w-full max-w-xs border-t-4 border-blue-400 dark:border-blue-700 transition-all duration-300 min-h-[340px] h-[340px] hover:scale-105 hover:shadow-2xl hover:border-purple-500 dark:hover:border-purple-700 cursor-pointer">
+                  <div className="flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 shadow-lg mb-4 z-10 border-4 border-white dark:border-gray-900 aspect-square">
                     <span className="text-3xl font-bold text-white drop-shadow-lg" style={{ fontFamily: "'Jost', sans-serif" }}>{step.step}</span>
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2 text-center" style={{ fontFamily: "'Jost', sans-serif" }}>{step.title}</h3>
-                  <p className="text-gray-600 text-base text-center flex-1">{step.description}</p>
+                  <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-2 text-center" style={{ fontFamily: "'Jost', sans-serif" }}>{step.title}</h3>
+                  <p className="text-gray-600 dark:text-gray-300 text-base text-center flex-1">{step.description}</p>
                   {index < processSteps.length - 1 && (
                     <div className="hidden md:block absolute top-1/2 right-[-2.5rem] transform -translate-y-1/2">
-                      <ArrowRight className="h-8 w-8 text-blue-300" />
+                      <ArrowRight className="h-8 w-8 text-blue-300 dark:text-blue-700" />
                     </div>
                   )}
                 </div>
@@ -342,7 +342,7 @@ const Services = () => {
         </section>
 
         {/* CTA Section */}
-        <section className="py-16 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+        <section className="py-16 bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-900 dark:to-purple-900 text-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-3xl font-bold mb-4">Ready to Transform Your Career?</h2>
             <p className="text-xl mb-8 opacity-90">

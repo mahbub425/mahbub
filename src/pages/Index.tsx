@@ -169,20 +169,20 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen" style={{ fontFamily: "'Jost', sans-serif", fontWeight: 500 }}>
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100" style={{ fontFamily: "'Jost', sans-serif", fontWeight: 500 }}>
       {/* Hero Section */}
       <ScrollFadeIn>
-      <section className="relative bg-gradient-to-br from-blue-200 via-white to-purple-200 pt-20 pb-32" style={{ fontFamily: "'Jost', sans-serif", fontWeight: 500 }}>
+      <section className="relative bg-gradient-to-br from-blue-200 via-white to-purple-200 dark:from-gray-800 dark:via-gray-900 dark:to-gray-800 pt-20 pb-32" style={{ fontFamily: "'Jost', sans-serif", fontWeight: 500 }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-8">
             <div className="space-y-4">
-              <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight" style={{ fontFamily: "'Jost', sans-serif", fontWeight: 700 }}>
+              <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 dark:text-gray-100 leading-tight" style={{ fontFamily: "'Jost', sans-serif", fontWeight: 700 }}>
                 Hi, I'm{" "}
                 <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                   Md Mahbub Ul Islam
                 </span>
               </h1>
-              <p className="text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
+              <p className="text-xl text-gray-600 dark:text-gray-300 leading-relaxed max-w-3xl mx-auto">
                 Organization Development (OD) Specialist, Digital Marketer & Tech Enthusiast
                 passionate about driving growth and innovation.
               </p>
@@ -212,7 +212,7 @@ const Index = () => {
 
       {/* About Preview */}
       <ScrollFadeIn direction="up">
-      <section className="py-24 bg-white" style={{ fontFamily: "'Jost', sans-serif", fontWeight: 500 }}>
+      <section className="py-24 bg-white dark:bg-gray-950" style={{ fontFamily: "'Jost', sans-serif", fontWeight: 500 }}>
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2
             className="font-extrabold uppercase bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent text-center mb-12"
@@ -223,7 +223,7 @@ const Index = () => {
           <div className="flex flex-col md:flex-row items-center gap-12">
             {/* Left: Video Section */}
             <div className="flex-1 flex justify-center mb-10 md:mb-0">
-              <div className="w-full max-w-md aspect-video rounded-3xl overflow-hidden shadow-xl border-4 border-blue-100 bg-gradient-to-br from-blue-100 to-purple-100 flex items-center justify-center">
+              <div className="w-full max-w-md aspect-video rounded-3xl overflow-hidden shadow-xl border-4 border-blue-100 dark:border-gray-800 bg-gradient-to-br from-blue-100 to-purple-100 dark:from-gray-900 dark:to-gray-800 flex items-center justify-center">
                 <iframe
                   width="100%"
                   height="100%"
@@ -237,45 +237,31 @@ const Index = () => {
             </div>
             {/* Right: Text */}
             <div className="flex-1 flex flex-col items-center md:items-start text-center md:text-left">
-              <p className="text-lg text-gray-700 leading-relaxed mb-6 max-w-xl">
-                I am passionate about helping people and organizations grow. With a background in <span className="font-semibold text-blue-700">Organization Development</span>, <span className="font-semibold text-purple-700">Digital Marketing</span>, and <span className="font-semibold text-blue-700">Technology</span>, I focus on delivering results through strategic planning and innovative solutions.
+              <p className="text-lg text-gray-700 dark:text-gray-200 leading-relaxed mb-6 max-w-xl">
+                I am passionate about helping people and organizations grow. With a background in <span className="font-semibold text-blue-700 dark:text-blue-300">Organization Development</span>, <span className="font-semibold text-purple-700 dark:text-purple-300">Digital Marketing</span>, and <span className="font-semibold text-blue-700 dark:text-blue-300">Technology</span>, I focus on delivering results through strategic planning and innovative solutions.
               </p>
               <ul className="space-y-4 mb-8 w-full">
                 <li
-                  className="flex items-center gap-3 transition-transform duration-300 hover:scale-105"
-                  style={{
-                    background: "#F4F4F6",
-                    borderRadius: "12px",
-                    padding: "16px",
-                    color: "#1F2937",
-                    boxShadow: "0 2px 8px 0 rgba(91,33,182,0.06)"
-                  }}
+                  className="flex items-center gap-3 transition-transform duration-300 hover:scale-105 bg-[#F4F4F6] dark:bg-gray-900 rounded-xl p-4 text-gray-900 dark:text-gray-100 shadow"
                 >
-                  <Building2 className="text-blue-600 w-7 h-7 flex-shrink-0" />
+                  <Building2 className="text-blue-600 dark:text-blue-400 w-7 h-7 flex-shrink-0" />
                   <div>
-                    <span className="font-semibold text-gray-900">Organization Development</span>
-                    <span className="block text-gray-700 text-sm font-medium">
+                    <span className="font-semibold text-gray-900 dark:text-gray-100">Organization Development</span>
+                    <span className="block text-gray-700 dark:text-gray-300 text-sm font-medium">
                       Assistant Executive, OnnoRokom Group
                     </span>
-                    <span className="block text-gray-600 text-sm">
+                    <span className="block text-gray-600 dark:text-gray-400 text-sm">
                       Oct 2023 - Present
                     </span>
                   </div>
                 </li>
                 <li
-                  className="flex items-center gap-3 transition-transform duration-300 hover:scale-105"
-                  style={{
-                    background: "#F4F4F6",
-                    borderRadius: "12px",
-                    padding: "16px",
-                    color: "#1F2937",
-                    boxShadow: "0 2px 8px 0 rgba(91,33,182,0.06)"
-                  }}
+                  className="flex items-center gap-3 transition-transform duration-300 hover:scale-105 bg-[#F4F4F6] dark:bg-gray-900 rounded-xl p-4 text-gray-900 dark:text-gray-100 shadow"
                 >
-                  <Briefcase className="text-purple-600 w-7 h-7 flex-shrink-0" />
+                  <Briefcase className="text-purple-600 dark:text-purple-400 w-7 h-7 flex-shrink-0" />
                   <div>
-                    <span className="font-semibold text-gray-900">Career Consulting</span>
-                    <span className="block text-gray-600 text-sm">Freelance &mdash; 2021 - Present</span>
+                    <span className="font-semibold text-gray-900 dark:text-gray-100">Career Consulting</span>
+                    <span className="block text-gray-600 dark:text-gray-400 text-sm">Freelance &mdash; 2021 - Present</span>
                   </div>
                 </li>
               </ul>
@@ -292,7 +278,7 @@ const Index = () => {
 
       {/* Skills Section */}
       <ScrollFadeIn direction="up">
-      <section className="py-20 bg-gradient-to-br from-blue-100 via-white to-purple-100" style={{ fontFamily: "'Jost', sans-serif", fontWeight: 500 }}>
+      <section className="py-20 bg-gradient-to-br from-blue-100 via-white to-purple-100 dark:from-gray-900 dark:via-gray-950 dark:to-gray-900" style={{ fontFamily: "'Jost', sans-serif", fontWeight: 500 }}>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
           <h2
             className="text-4xl font-extrabold uppercase bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-2 text-center"
@@ -300,7 +286,7 @@ const Index = () => {
           >
             MY SKILLS
           </h2>
-          <p className="text-lg text-gray-700 mb-10 max-w-2xl text-center" style={{ fontFamily: "'Jost', sans-serif", fontWeight: 500 }}>
+          <p className="text-lg text-gray-700 dark:text-gray-200 mb-10 max-w-2xl text-center" style={{ fontFamily: "'Jost', sans-serif", fontWeight: 500 }}>
             I am always learning new tools and concepts to stay updated and add value to my work.
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-8 justify-items-center w-full">
@@ -314,7 +300,7 @@ const Index = () => {
 
       {/* Services Section */}
       <ScrollFadeIn direction="up">
-      <section className="py-20 bg-white" style={{ fontFamily: "'Jost', sans-serif", fontWeight: 500 }}>
+      <section className="py-20 bg-white dark:bg-gray-950" style={{ fontFamily: "'Jost', sans-serif", fontWeight: 500 }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2
@@ -323,7 +309,7 @@ const Index = () => {
             >
               MY SERVICES
             </h2>
-            <p className="text-lg text-gray-600">
+            <p className="text-lg text-gray-600 dark:text-gray-300">
               Professional services to accelerate your career and business growth
             </p>
           </div>
@@ -331,7 +317,7 @@ const Index = () => {
             {services.map((service, index) => (
               <Card
                 key={index}
-                className="relative group text-center border-0 bg-gradient-to-br from-blue-50 via-white to-purple-50 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden animate-fade-in-up p-6"
+                className="relative group text-center border-0 bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-950 dark:to-gray-900 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden animate-fade-in-up p-6"
                 style={{
                   minHeight: 260,
                   animationDelay: `${index * 0.15 + 0.1}s`,
@@ -339,20 +325,20 @@ const Index = () => {
                   animationFillMode: "both"
                 }}
               >
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-br from-blue-100/60 to-purple-100/60 pointer-events-none" />
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-br from-blue-100/60 to-purple-100/60 dark:from-gray-800/60 dark:to-gray-900/60 pointer-events-none" />
                 <CardHeader className="pb-4 flex flex-col items-center">
-                  <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:scale-110 transition-transform duration-300 border-4 border-white">
+                  <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:scale-110 transition-transform duration-300 border-4 border-white dark:border-gray-900">
                     <service.icon className="h-10 w-10 text-white" />
                   </div>
                   <CardTitle
-                    className="text-lg font-bold group-hover:text-blue-700 transition-colors tracking-wide mb-2 uppercase"
+                    className="text-lg font-bold group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-colors tracking-wide mb-2 uppercase"
                     style={{ fontFamily: "'Jost', sans-serif", fontWeight: 600 }}
                   >
                     {service.title}
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription className="text-gray-700 text-lg px-2 font-medium" style={{fontFamily: "'Jost', sans-serif"}}>
+                  <CardDescription className="text-gray-700 dark:text-gray-200 text-lg px-2 font-medium" style={{fontFamily: "'Jost', sans-serif"}}>
                     {service.description}
                   </CardDescription>
                 </CardContent>
@@ -377,7 +363,7 @@ const Index = () => {
 
       {/* Featured Projects */}
       <ScrollFadeIn direction="up">
-      <section className="py-20 bg-gray-50" style={{ fontFamily: "'Jost', sans-serif", fontWeight: 500 }}>
+      <section className="py-20 bg-gray-50 dark:bg-gray-900" style={{ fontFamily: "'Jost', sans-serif", fontWeight: 500 }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2
@@ -386,13 +372,13 @@ const Index = () => {
             >
               FEATURED PROJECTS
             </h2>
-            <p className="text-lg text-gray-600">
+            <p className="text-lg text-gray-600 dark:text-gray-300">
               Showcasing impactful work and successful implementations
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
             {projects.map((project, index) => (
-              <Card key={index} className="hover:shadow-xl transition-all duration-300 border-0 bg-white group overflow-hidden">
+              <Card key={index} className="hover:shadow-xl transition-all duration-300 border-0 bg-white dark:bg-gray-800 group overflow-hidden">
                 <div className="relative overflow-hidden">
                   <img
                     src={project.image}
@@ -400,16 +386,16 @@ const Index = () => {
                     className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                   <div className="absolute top-4 right-4">
-                    <Badge variant="secondary" className="bg-white/90 backdrop-blur-sm shadow-lg">
+                    <Badge variant="secondary" className="bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm shadow-lg text-gray-900 dark:text-gray-100">
                       {project.category}
                     </Badge>
                   </div>
                 </div>
                 <CardHeader>
-                  <CardTitle className="group-hover:text-blue-600 transition-colors">{project.title}</CardTitle>
+                  <CardTitle className="group-hover:text-blue-600 dark:group-hover:text-blue-300 transition-colors text-gray-900 dark:text-gray-100">{project.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription className="text-gray-600">{project.description}</CardDescription>
+                  <CardDescription className="text-gray-600 dark:text-gray-300">{project.description}</CardDescription>
                 </CardContent>
               </Card>
             ))}
@@ -431,7 +417,7 @@ const Index = () => {
 
       {/* Contact CTA */}
       <ScrollFadeIn direction="up">
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-purple-600 text-white" style={{ fontFamily: "'Jost', sans-serif", fontWeight: 500 }}>
+      <section className="py-20 bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-900 dark:to-purple-900 text-white" style={{ fontFamily: "'Jost', sans-serif", fontWeight: 500 }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold uppercase mb-4" style={{ fontFamily: "'Jost', sans-serif", fontWeight: 700 }}>
             READY TO TRANSFORM YOUR CAREER?
@@ -492,6 +478,7 @@ function CircularSkill({ percent, name }: { percent: number; name: string }) {
       <svg height={radius * 2} width={radius * 2} className="mb-2">
         <circle
           stroke="#e0e7ef"
+          className="dark:stroke-gray-800"
           fill="transparent"
           strokeWidth={stroke}
           r={normalizedRadius}
@@ -522,12 +509,13 @@ function CircularSkill({ percent, name }: { percent: number; name: string }) {
           dy=".3em"
           fontSize="1.6rem"
           fill="#2563eb"
+          className="dark:fill-blue-400"
           fontWeight="bold"
         >
           {progress}%
         </text>
       </svg>
-      <span className="text-base font-medium text-gray-700 text-center">{name}</span>
+      <span className="text-base font-medium text-gray-700 dark:text-gray-200 text-center">{name}</span>
     </div>
   );
 }

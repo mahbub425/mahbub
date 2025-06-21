@@ -165,73 +165,61 @@ const Portfolio = () => {
 					(project) => project.category === selectedCategory
 			  );
 	return (
-		<div
-			className="min-h-screen bg-gray-50"
-			style={{ fontFamily: "'Jost', sans-serif", fontWeight: 500 }}
-		>
-			<ScrollFadeIn>
-				{/* Hero Section */}
-				<section className="relative bg-gradient-to-br from-blue-200 via-white to-purple-200 pt-20 pb-16">
-					<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-						<div className="text-center">
-							<h1
-								className="font-extrabold uppercase bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent text-center mb-8"
-								style={{
-									fontFamily: "'Jost', sans-serif",
-									fontWeight: 700,
-									fontSize: "32px",
-								}}
-							>
-								<span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-									MY PORTFOLIO
-								</span>
-							</h1>
-							<p className="text-lg text-gray-700 max-w-2xl mx-auto">
-								Showcasing impactful projects and successful implementations
-								across organization development, digital marketing, and
-								technology.
-							</p>
-						</div>
-					</div>
-				</section>
-			</ScrollFadeIn>
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100" style={{ fontFamily: "'Jost', sans-serif", fontWeight: 500 }}>
+      <ScrollFadeIn>
+        {/* Hero Section */}
+        <section className="relative bg-gradient-to-br from-blue-200 via-white to-purple-200 dark:from-gray-800 dark:via-gray-900 dark:to-gray-800 pt-20 pb-16">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center">
+              <h1
+                className="font-extrabold uppercase bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent text-center mb-8"
+                style={{
+                  fontFamily: "'Jost', sans-serif",
+                  fontWeight: 700,
+                  fontSize: "32px",
+                }}
+              >
+                <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                  MY PORTFOLIO
+                </span>
+              </h1>
+              <p className="text-lg text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
+                Showcasing impactful projects and successful implementations across
+                organization development, digital marketing, and technology.
+              </p>
+            </div>
+          </div>
+        </section>
+      </ScrollFadeIn>
 
-			{/* Modern Filter Buttons */}
-			<div
-				className="w-full px-0 flex flex-wrap gap-3 justify-center border-b"
-				style={{
-					background: "#F9FAFB",
-					borderBottomColor: "rgba(0,0,0,0.08)",
-					paddingTop: "2.5rem",
-					paddingBottom: "2.5rem",
-				}}
-			>
-				<button
-					className={`px-5 py-2 rounded-md font-semibold shadow-sm border-2 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400 text-sm tracking-wide backdrop-blur-md ${
-						selectedCategory === "All"
-							? "bg-gradient-to-r from-blue-600 to-purple-600 text-white border-0 scale-105 shadow-lg"
-							: "bg-[#F9FAFB] text-blue-700 border-blue-200 hover:bg-blue-50 hover:scale-105"
-					}`}
-					style={{ minWidth: "120px" }}
-					onClick={() => setSelectedCategory("All")}
-				>
-					All
-				</button>
-				{filterCategories.map((cat) => (
-					<button
-						key={cat}
-						className={`px-5 py-2 rounded-md font-semibold shadow-sm border-2 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400 text-sm tracking-wide backdrop-blur-md ${
-							selectedCategory === cat
-								? "bg-gradient-to-r from-blue-600 to-purple-600 text-white border-0 scale-105 shadow-lg"
-								: "bg-[#F9FAFB] text-blue-700 border-blue-200 hover:bg-blue-50 hover:scale-105"
-						}`}
-						style={{ minWidth: "120px" }}
-						onClick={() => setSelectedCategory(cat)}
-					>
-						{cat}
-					</button>
-				))}
-			</div>
+      {/* Modern Filter Buttons */}
+      <div className="w-full px-0 flex flex-wrap gap-3 justify-center border-b bg-[#F9FAFB] dark:bg-gray-800 border-b-gray-200 dark:border-b-gray-700 pt-10 pb-10">
+        <button
+          className={`px-5 py-2 rounded-md font-semibold shadow-sm border-2 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400 text-sm tracking-wide backdrop-blur-md ${
+            selectedCategory === "All"
+              ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white border-0 scale-105 shadow-lg"
+              : "bg-[#F9FAFB] dark:bg-gray-900 text-blue-700 dark:text-blue-200 border-blue-200 dark:border-gray-700 hover:bg-blue-50 dark:hover:bg-gray-700 hover:scale-105"
+          }`}
+          style={{ minWidth: "120px" }}
+          onClick={() => setSelectedCategory("All")}
+        >
+          All
+        </button>
+        {filterCategories.map((cat) => (
+          <button
+            key={cat}
+            className={`px-5 py-2 rounded-md font-semibold shadow-sm border-2 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400 text-sm tracking-wide backdrop-blur-md ${
+              selectedCategory === cat
+                ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white border-0 scale-105 shadow-lg"
+                : "bg-[#F9FAFB] dark:bg-gray-900 text-blue-700 dark:text-blue-200 border-blue-200 dark:border-gray-700 hover:bg-blue-50 dark:hover:bg-gray-700 hover:scale-105"
+            }`}
+            style={{ minWidth: "120px" }}
+            onClick={() => setSelectedCategory(cat)}
+          >
+            {cat}
+          </button>
+        ))}
+      </div>
 
 			{/* Portfolio Case Study Cards */}
 			<section className="py-8">
@@ -239,7 +227,7 @@ const Portfolio = () => {
 					{filteredProjects.map((project) => (
 						<div
 							key={project.id}
-							className="bg-white rounded-md shadow-md hover:shadow-lg transition-shadow border border-gray-100 flex flex-col md:flex-row w-full"
+							className="bg-white dark:bg-gray-800 rounded-md shadow-md hover:shadow-lg transition-shadow border border-gray-100 dark:border-gray-700 flex flex-col md:flex-row w-full"
 						>
 							{/* Left: Image */}
 							<div className="md:w-2/5 w-full flex-shrink-0">
@@ -251,59 +239,35 @@ const Portfolio = () => {
 							</div>
 							{/* Right: Content */}
 							<div className="md:w-3/5 w-full flex flex-col p-4">
-								<span className="text-[15px] font-semibold text-green-600 uppercase mb-1 tracking-wide">
-									{project.category}
+								<span className="text-[15px] font-semibold text-green-600 dark:text-green-400 uppercase mb-1 tracking-wide">
+									{Array.isArray(project.category) ? project.category.join(', ') : project.category}
 								</span>
-								<h2
-									className="font-bold text-blue-800 mb-1"
-									style={{ fontSize: "22px" }}
-								>
-									{project.title}
-								</h2>
-								<p className="text-[15px] text-gray-700 mb-2">
-									{project.description}
-								</p>
+								<h2 className="font-bold text-blue-800 dark:text-blue-300 mb-1" style={{fontSize: '22px'}}>{project.title}</h2>
+								<p className="text-[15px] text-gray-700 dark:text-gray-200 mb-2">{project.description}</p>
 								{/* Tags */}
 								<div className="flex flex-wrap gap-2 mb-2">
 									{project.tags.map((tag, idx) => (
 										<span
 											key={idx}
-											className="bg-blue-100 text-blue-700 text-[15px] px-2 py-0.5 rounded font-medium"
+											className="bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-200 text-[15px] px-2 py-0.5 rounded font-medium"
 										>
 											{tag}
 										</span>
 									))}
 								</div>
 								{/* Results */}
-								<div className="bg-green-50 border-l-4 border-green-400 text-green-800 p-2 rounded mb-2">
+								<div className="bg-green-50 dark:bg-green-900 border-l-4 border-green-400 dark:border-green-500 text-green-800 dark:text-green-200 p-2 rounded mb-2">
 									{project.results.map((result, idx) => (
 										<div key={idx} className="flex items-start gap-2">
-											<span className="text-green-500 font-bold text-[15px]">
-												✔
-											</span>
+											<span className="text-green-500 dark:text-green-300 font-bold text-[15px]">✔</span>
 											<span className="text-[15px]">{result}</span>
 										</div>
 									))}
 								</div>
 								{/* Timeline */}
-								<div className="text-[15px] text-gray-500 mb-3 flex items-center gap-2">
-									<svg
-										className="w-4 h-4 text-blue-500"
-										fill="none"
-										viewBox="0 0 24 24"
-										stroke="currentColor"
-										strokeWidth="2"
-									>
-										<path
-											strokeLinecap="round"
-											strokeLinejoin="round"
-											d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-										/>
-									</svg>
-									<span className="font-semibold text-gray-700">
-										Timeline:
-									</span>{" "}
-									{project.timeline}
+								<div className="text-[15px] text-gray-500 dark:text-gray-300 mb-3 flex items-center gap-2">
+									<svg className="w-4 h-4 text-blue-500 dark:text-blue-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+									<span className="font-semibold text-gray-700 dark:text-gray-200">Timeline:</span> {project.timeline}
 								</div>
 								{/* Action Button */}
 								<div className="mt-auto">
@@ -312,7 +276,7 @@ const Portfolio = () => {
 										target="_blank"
 										rel="noopener noreferrer"
 										className="inline-block bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-2 px-5 rounded-md shadow transition-colors focus:outline-none focus:ring-2 focus:ring-blue-400 text-sm tracking-wide"
-										style={{ minWidth: "120px" }}
+										style={{minWidth: '120px'}}
 									>
 										{project.buttonLabel}
 									</a>

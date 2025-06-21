@@ -11,26 +11,26 @@ const trainingData = [
 		color: "blue",
 		details: (
 			<>
-				<div className="text-gray-700 text-sm mb-1 flex items-center gap-2">
+				<div className="text-gray-700 dark:text-gray-200 text-sm mb-1 flex items-center gap-2">
 					<svg className="h-4 w-4 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M3 7V6a3 3 0 013-3h12a3 3 0 013 3v1M16 21v-2a2 2 0 00-2-2h-4a2 2 0 00-2 2v2M12 11v.01" /></svg>
 					Organization: <span className="font-semibold">Simplilearn</span>
 				</div>
-				<div className="text-gray-700 text-sm mb-1 flex items-center gap-2">
+				<div className="text-gray-700 dark:text-gray-200 text-sm mb-1 flex items-center gap-2">
 					<svg className="h-4 w-4 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10" /><path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6l4 2" /></svg>
 					Issued: April 2025
 				</div>
-				<div className="text-gray-700 text-sm mb-1 flex items-center gap-2">
+				<div className="text-gray-700 dark:text-gray-200 text-sm mb-1 flex items-center gap-2">
 					<svg className="h-4 w-4 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M12 17.75l-6.172 3.245 1.179-6.873L2 9.505l6.908-1.004L12 2.75l3.092 5.751L22 9.505l-5.007 4.617 1.179 6.873z" /></svg>
 					Credential ID: 8160310
 				</div>
 				<div className="mt-2">
-					<span className="font-semibold text-gray-800 flex items-center gap-2">
+					<span className="font-semibold text-gray-800 dark:text-gray-100 flex items-center gap-2">
 						<svg className="h-4 w-4 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10" /><path strokeLinecap="round" strokeLinejoin="round" d="M8 12l2 2 4-4" /></svg>
-						Skills Covered:
+						Skills Covered
 					</span>
 					<div className="flex flex-col gap-1 mt-1 ml-2">
 						{["Data Analysis","Microsoft Power BI","Microsoft Power Query","Data-driven Decision Making","Data Visualization","Dashboard Metrics"].map((skill, i) => (
-							<span key={i} className="flex items-center gap-2 text-gray-700">
+							<span key={i} className="flex items-center gap-2 text-gray-700 dark:text-gray-200">
 								<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
 								{skill}
 							</span>
@@ -45,26 +45,26 @@ const trainingData = [
 		color: "purple",
 		details: (
 			<>
-				<div className="text-gray-700 text-sm mb-1 flex items-center gap-2">
+				<div className="text-gray-700 dark:text-gray-200 text-sm mb-1 flex items-center gap-2">
 					<svg className="h-4 w-4 text-purple-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M3 7V6a3 3 0 013-3h12a3 3 0 013 3v1M16 21v-2a2 2 0 00-2-2h-4a2 2 0 00-2 2v2M12 11v.01" /></svg>
 					Organization: <span className="font-semibold">HP LIFE</span>
 				</div>
-				<div className="text-gray-700 text-sm mb-1 flex items-center gap-2">
+				<div className="text-gray-700 dark:text-gray-200 text-sm mb-1 flex items-center gap-2">
 					<svg className="h-4 w-4 text-purple-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10" /><path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6l4 2" /></svg>
 					Issued: September 2024
 				</div>
-				<div className="text-gray-700 text-sm mb-1 flex items-center gap-2">
+				<div className="text-gray-700 dark:text-gray-200 text-sm mb-1 flex items-center gap-2">
 					<svg className="h-4 w-4 text-purple-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M12 17.75l-6.172 3.245 1.179-6.873L2 9.505l6.908-1.004L12 2.75l3.092 5.751L22 9.505l-5.007 4.617 1.179 6.873z" /></svg>
 					Credential ID: 0cc94625-88cc-4bdc-90e0-4d04647f3bb8
 				</div>
 				<div className="mt-2">
-					<span className="font-semibold text-gray-800 flex items-center gap-2">
+					<span className="font-semibold text-gray-800 dark:text-gray-100 flex items-center gap-2">
 						<svg className="h-4 w-4 text-purple-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10" /><path strokeLinecap="round" strokeLinejoin="round" d="M8 12l2 2 4-4" /></svg>
-						Skills Covered:
+						Skills Covered
 					</span>
 					<div className="flex flex-col gap-1 mt-1 ml-2">
 						{["Leadership","Team Leadership","Cross-functional Team Leadership","Leadership Development","Organizational Leadership"].map((skill, i) => (
-							<span key={i} className="flex items-center gap-2 text-gray-700">
+							<span key={i} className="flex items-center gap-2 text-gray-700 dark:text-gray-200">
 								<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-purple-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
 								{skill}
 							</span>
@@ -79,26 +79,26 @@ const trainingData = [
 		color: "pink",
 		details: (
 			<>
-				<div className="text-gray-700 text-sm mb-1 flex items-center gap-2">
+				<div className="text-gray-700 dark:text-gray-200 text-sm mb-1 flex items-center gap-2">
 					<svg className="h-4 w-4 text-pink-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M3 7V6a3 3 0 013-3h12a3 3 0 013 3v1M16 21v-2a2 2 0 00-2-2h-4a2 2 0 00-2 2v2M12 11v.01" /></svg>
 					Organization: <span className="font-semibold">Saylor Academy</span>
 				</div>
-				<div className="text-gray-700 text-sm mb-1 flex items-center gap-2">
+				<div className="text-gray-700 dark:text-gray-200 text-sm mb-1 flex items-center gap-2">
 					<svg className="h-4 w-4 text-pink-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10" /><path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6l4 2" /></svg>
 					Issued: July 2024
 				</div>
-				<div className="text-gray-700 text-sm mb-1 flex items-center gap-2">
+				<div className="text-gray-700 dark:text-gray-200 text-sm mb-1 flex items-center gap-2">
 					<svg className="h-4 w-4 text-pink-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M12 17.75l-6.172 3.245 1.179-6.873L2 9.505l6.908-1.004L12 2.75l3.092 5.751L22 9.505l-5.007 4.617 1.179 6.873z" /></svg>
 					Credential ID: 7819484550MU
 				</div>
 				<div className="mt-2">
-					<span className="font-semibold text-gray-800 flex items-center gap-2">
+					<span className="font-semibold text-gray-800 dark:text-gray-100 flex items-center gap-2">
 						<svg className="h-4 w-4 text-pink-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10" /><path strokeLinecap="round" strokeLinejoin="round" d="M8 12l2 2 4-4" /></svg>
-						Skills Covered:
+						Skills Covered
 					</span>
 					<div className="flex flex-col gap-1 mt-1 ml-2">
 						{["Data Analysis","Decision-Making","Data-driven Decision Making","Critical Thinking","Data Analytics"].map((skill, i) => (
-							<span key={i} className="flex items-center gap-2 text-gray-700">
+							<span key={i} className="flex items-center gap-2 text-gray-700 dark:text-gray-200">
 								<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-pink-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
 								{skill}
 							</span>
@@ -113,22 +113,22 @@ const trainingData = [
 		color: "green",
 		details: (
 			<>
-				<div className="text-gray-700 text-sm mb-1 flex items-center gap-2">
+				<div className="text-gray-700 dark:text-gray-200 text-sm mb-1 flex items-center gap-2">
 					<svg className="h-4 w-4 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M3 7V6a3 3 0 013-3h12a3 3 0 013 3v1M16 21v-2a2 2 0 00-2-2h-4a2 2 0 00-2 2v2M12 11v.01" /></svg>
 					Organization: <span className="font-semibold">Great Learning</span>
 				</div>
-				<div className="text-gray-700 text-sm mb-1 flex items-center gap-2">
+				<div className="text-gray-700 dark:text-gray-200 text-sm mb-1 flex items-center gap-2">
 					<svg className="h-4 w-4 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10" /><path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6l4 2" /></svg>
 					Issued: June 2024
 				</div>
 				<div className="mt-2">
-					<span className="font-semibold text-gray-800 flex items-center gap-2">
+					<span className="font-semibold text-gray-800 dark:text-gray-100 flex items-center gap-2">
 						<svg className="h-4 w-4 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10" /><path strokeLinecap="round" strokeLinejoin="round" d="M8 12l2 2 4-4" /></svg>
-						Skills Covered:
+						Skills Covered
 					</span>
 					<div className="flex flex-col gap-1 mt-1 ml-2">
 						{["Project Management","Project Planning","Project Evaluation"].map((skill, i) => (
-							<span key={i} className="flex items-center gap-2 text-gray-700">
+							<span key={i} className="flex items-center gap-2 text-gray-700 dark:text-gray-200">
 								<svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
 								{skill}
 							</span>
@@ -289,10 +289,10 @@ const About = () => {
 	];
 
 	return (
-		<div className="min-h-screen" style={{ fontFamily: "'Jost', sans-serif", fontWeight: 500 }}>
+		<div className="min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100" style={{ fontFamily: "'Jost', sans-serif", fontWeight: 500 }}>
 			<ScrollFadeIn>
 				{/* Hero Section */}
-				<section className="relative bg-gradient-to-br from-blue-200 via-white to-purple-200 pt-20 pb-32">
+				<section className="relative bg-gradient-to-br from-blue-200 via-white to-purple-200 dark:from-gray-800 dark:via-gray-900 dark:to-gray-800 pt-20 pb-32">
 					<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 						<div className="text-center">
 							<h1
@@ -307,7 +307,7 @@ const About = () => {
 									ABOUT ME
 								</span>
 							</h1>
-							<p className="text-xl text-gray-700 max-w-3xl mx-auto">
+							<p className="text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
 								Passionate about empowering individuals and organizations through
 								strategic development, digital innovation, and transformational
 								leadership.
@@ -317,9 +317,9 @@ const About = () => {
 				</section>
 
 				{/* Biography */}
-				<section className="py-16 bg-white">
+				<section className="py-16 bg-white dark:bg-gray-950">
 					<div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-						<h2 className="text-3xl font-bold text-gray-900 mb-8 text-center uppercase">
+						<h2 className="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-8 text-center uppercase">
 							<span
 								className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
 								style={{
@@ -332,7 +332,7 @@ const About = () => {
 								MY STORY
 							</span>
 						</h2>
-						<div className="prose prose-lg max-w-none text-gray-600 space-y-6 text-center">
+						<div className="prose prose-lg max-w-none text-gray-600 dark:text-gray-300 space-y-6 text-center">
 							<p>
 								My journey began with a deep fascination for technology and its
 								ability to transform how we work, communicate, and live. Although I
@@ -363,9 +363,9 @@ const About = () => {
 				</section>
 
 				{/* Education */}
-				<section className="py-16 bg-gray-50">
+				<section className="py-16 bg-gray-50 dark:bg-gray-900">
 					<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-						<h2 className="text-3xl font-bold text-gray-900 mb-12 text-center uppercase">
+						<h2 className="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-12 text-center uppercase">
 							<span
 								className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
 								style={{
@@ -384,25 +384,25 @@ const About = () => {
 							{education.map((edu, index) => (
 								<Card
 									key={index}
-									className="relative overflow-visible rounded-3xl border-0 bg-white/95 shadow-[0_8px_32px_0_rgba(31,38,135,0.18)] hover:shadow-[0_12px_48px_0_rgba(80,0,200,0.18)] hover:scale-105 transition-all duration-300 backdrop-blur-xl p-0 group"
+									className="relative overflow-visible rounded-3xl border-0 bg-white/95 dark:bg-gray-800 shadow-[0_8px_32px_0_rgba(31,38,135,0.18)] hover:shadow-[0_12px_48px_0_rgba(80,0,200,0.18)] hover:scale-105 transition-all duration-300 backdrop-blur-xl p-0 group"
 								>
 									<div className="absolute -top-7 left-1/2 -translate-x-1/2 z-10">
 										<div className="bg-gradient-to-br from-blue-500 via-purple-500 to-pink-400 p-1 rounded-full shadow-xl animate-[pulse_2s_infinite]">
-											<div className="bg-white p-1.5 rounded-full flex items-center justify-center shadow-md">
+											<div className="bg-white dark:bg-gray-900 p-1.5 rounded-full flex items-center justify-center shadow-md">
 												<Calendar className="w-6 h-6 text-blue-600 group-hover:text-purple-600 transition-colors duration-300" />
 											</div>
 										</div>
 									</div>
 									<CardHeader className="pt-12 pb-4 px-6 text-center">
-										<CardTitle className="text-lg font-bold text-gray-900 uppercase tracking-wide mb-1">
+										<CardTitle className="text-lg font-bold text-gray-900 dark:text-gray-100 uppercase tracking-wide mb-1">
 											{edu.degree}
 										</CardTitle>
-										<CardDescription className="flex flex-col items-center gap-1 text-sm text-gray-500 font-medium">
-											<span className="font-semibold text-blue-700">
+										<CardDescription className="flex flex-col items-center gap-1 text-sm text-gray-500 dark:text-gray-300 font-medium">
+											<span className="font-semibold text-blue-700 dark:text-blue-300">
 												{edu.institution}
 											</span>
-											<span className="text-gray-700">{edu.description}</span>
-											<span className="text-purple-600 font-bold">
+											<span className="text-gray-700 dark:text-gray-200">{edu.description}</span>
+											<span className="text-purple-600 dark:text-purple-300 font-bold">
 												{edu.year}
 											</span>
 										</CardDescription>
@@ -414,9 +414,9 @@ const About = () => {
 				</section>
 
 				{/* Experience */}
-				<section className="py-16 bg-white">
+				<section className="py-16 bg-white dark:bg-gray-950">
 					<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-						<h2 className="text-3xl font-bold text-gray-900 mb-12 text-center uppercase">
+						<h2 className="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-12 text-center uppercase">
 							<span
 								className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
 								style={{
@@ -424,42 +424,42 @@ const About = () => {
 									fontWeight: 700,
 									fontSize: "36px",
 								}}
-						>
-							PROFESSIONAL EXPERIENCE
-						</span>
+							>
+								PROFESSIONAL EXPERIENCE
+							</span>
 						</h2>
 						<div className="space-y-10">
 							{experience.map((exp, index) => (
 								<div
 									key={index}
-									className="px-2 md:px-8 py-4 md:py-6 border-l-4 border-gradient-to-b from-blue-600 to-purple-600 bg-white/60 backdrop-blur-sm rounded-none md:rounded-xl shadow-none md:shadow-sm transition-all duration-300"
+									className="px-2 md:px-8 py-4 md:py-6 border-l-4 border-gradient-to-b from-blue-600 to-purple-600 bg-white/60 dark:bg-gray-900/60 backdrop-blur-sm rounded-none md:rounded-xl shadow-none md:shadow-sm transition-all duration-300"
 									style={{ fontFamily: "'Jost', sans-serif" }}
 								>
-									<h3 className="text-2xl font-bold text-black uppercase tracking-wide mb-1 flex items-center gap-2">
+									<h3 className="text-2xl font-bold text-black dark:text-gray-100 uppercase tracking-wide mb-1 flex items-center gap-2">
 										{exp.title}
 									</h3>
 									<div className="flex flex-col gap-1 mb-2">
 										<span className="font-semibold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent text-base">
 											{exp.company}
 										</span>
-										<span className="flex flex-wrap items-center gap-4 text-gray-600 text-sm">
+										<span className="flex flex-wrap items-center gap-4 text-gray-600 dark:text-gray-300 text-sm">
 											<span className="flex items-center gap-1">
-												<Calendar className="h-4 w-4 text-blue-500" />
+												<Calendar className="h-4 w-4 text-blue-500 dark:text-blue-300" />
 												{exp.duration}
 											</span>
 											<span className="flex items-center gap-1">
-												<MapPin className="h-4 w-4 text-purple-500" />
+												<MapPin className="h-4 w-4 text-purple-500 dark:text-purple-300" />
 												{exp.location}
 											</span>
 										</span>
 									</div>
-									<ul className="space-y-2 pl-2 text-gray-700 text-base">
+									<ul className="space-y-2 pl-2 text-gray-700 dark:text-gray-200 text-base">
 										{exp.responsibilities.map((responsibility, idx) => (
 											<li
 												key={idx}
 												className="flex items-start gap-2 leading-relaxed"
 											>
-												<span className="mt-1 text-blue-600">
+												<span className="mt-1 text-blue-600 dark:text-blue-300">
 													<svg
 														xmlns="http://www.w3.org/2000/svg"
 														className="h-4 w-4"
@@ -486,9 +486,9 @@ const About = () => {
 				</section>
 
 				{/* Skills */}
-				<section className="py-16 bg-gradient-to-br from-blue-200 via-white to-purple-200">
+				<section className="py-16 bg-gradient-to-br from-blue-200 via-white to-purple-200 dark:from-gray-800 dark:via-gray-900 dark:to-gray-800">
 					<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-						<h2 className="text-3xl font-bold text-gray-900 mb-12 text-center uppercase">
+						<h2 className="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-12 text-center uppercase">
 							<span
 								className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
 								style={{
@@ -507,17 +507,17 @@ const About = () => {
 							{Object.entries(skills).map(([category, skillList], index) => (
 								<div
 									key={index}
-									className="relative group rounded-2xl bg-white/90 shadow-xl border-0 p-6 flex flex-col items-center hover:scale-105 hover:shadow-2xl transition-transform duration-500 animate-fade-in"
+									className="relative group rounded-2xl bg-white/90 dark:bg-gray-800 shadow-xl border-0 p-6 flex flex-col items-center hover:scale-105 hover:shadow-2xl transition-transform duration-500 animate-fade-in"
 									style={{ minHeight: "320px" }}
 								>
-									<h3 className="text-xl font-bold text-gray-900 uppercase tracking-wide mb-3 mt-2 text-center">
+									<h3 className="text-xl font-bold text-gray-900 dark:text-gray-100 uppercase tracking-wide mb-3 mt-2 text-center">
 										{category}
 									</h3>
 									<div className="flex flex-wrap justify-center gap-2 mt-2">
 										{skillList.map((skill, idx) => (
 											<span
 												key={idx}
-												className="inline-block bg-gradient-to-r from-blue-100 to-purple-100 text-blue-900 font-medium px-3 py-1 rounded-full shadow-sm hover:scale-105 transition-transform duration-300"
+												className="inline-block bg-gradient-to-r from-blue-100 to-purple-100 dark:from-gray-900 dark:to-gray-800 text-blue-900 dark:text-blue-200 font-medium px-3 py-1 rounded-full shadow-sm hover:scale-105 transition-transform duration-300"
 											>
 												{skill}
 											</span>
@@ -530,17 +530,17 @@ const About = () => {
 				</section>
 
 				{/* Training & Certification */}
-				<section className="py-16 bg-white">
+				<section className="py-16 bg-white dark:bg-gray-950">
 					<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-						<h2 className="text-3xl font-bold text-gray-900 mb-12 text-center uppercase">
-											<span
-							className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
-							style={{
-								fontFamily: "'Jost', sans-serif",
-								fontWeight: 700,
-								fontSize: "36px",
-							}}
-						>
+						<h2 className="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-12 text-center uppercase">
+								<span
+								className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
+								style={{
+									fontFamily: "'Jost', sans-serif",
+									fontWeight: 700,
+									fontSize: "36px",
+								}}
+								>
               TRAINING & CERTIFICATION
             </span>
 						</h2>
@@ -558,7 +558,7 @@ const About = () => {
 							return (
 								<div
 									key={idx}
-									className={`rounded-2xl bg-white/90 shadow-lg p-6 flex flex-col gap-2 border-l-4 border-${item.color}-500 cursor-pointer transition-all duration-300 group relative`}
+									className={`rounded-2xl bg-white/90 dark:bg-gray-800 shadow-lg p-6 flex flex-col gap-2 border-l-4 border-${item.color}-500 cursor-pointer transition-all duration-300 group relative`}
 									tabIndex={0}
 									onClick={handleToggle}
 									onKeyDown={(e) => (e.key === "Enter" || e.key === " ") && handleToggle(e)}
@@ -568,7 +568,7 @@ const About = () => {
 									role="button"
 								>
 									<div className="flex items-center justify-between">
-										<h3 className="text-xl font-bold mb-1 text-gray-900 group-hover:text-blue-700 transition-colors duration-300 select-none">
+										<h3 className="text-xl font-bold mb-1 text-gray-900 dark:text-gray-100 group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-colors duration-300 select-none">
 											{item.title}
 										</h3>
 										<button
@@ -589,9 +589,9 @@ const About = () => {
 				</section>
 
 				{/* Hobbies */}
-				<section className="py-16 bg-gradient-to-br from-purple-50 via-white to-blue-50">
+				<section className="py-16 bg-gradient-to-br from-purple-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-950 dark:to-blue-900">
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center uppercase">
+    <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-12 text-center uppercase">
       <span
         className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
         style={{ fontFamily: "'Jost', sans-serif", fontWeight: 700, fontSize: "36px" }}
@@ -628,13 +628,13 @@ const About = () => {
         return (
           <div
             key={index}
-            className="rounded-3xl bg-white/70 backdrop-blur-lg shadow-2xl border-0 p-8 flex flex-col items-center justify-center transition-transform duration-300 hover:scale-105 hover:shadow-3xl group relative animate-fade-in"
+            className="rounded-3xl bg-white/70 dark:bg-gray-800/70 backdrop-blur-lg shadow-2xl border-0 p-8 flex flex-col items-center justify-center transition-transform duration-300 hover:scale-105 hover:shadow-3xl group relative animate-fade-in"
             style={{ minHeight: "180px", border: "1.5px solid #e0e7ff", boxShadow: "0 8px 32px 0 rgba(31, 38, 135, 0.15)" }}
           >
-            <div className="mb-4 flex items-center justify-center bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100 rounded-full p-4 shadow-md">
+            <div className="mb-4 flex items-center justify-center bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 rounded-full p-4 shadow-md">
               {icon}
             </div>
-            <span className="text-lg font-bold text-gray-800 text-center tracking-wide group-hover:text-blue-600 transition-colors duration-300" style={{ fontFamily: "'Jost', sans-serif", letterSpacing: "0.02em" }}>
+            <span className="text-lg font-bold text-gray-800 dark:text-gray-100 text-center tracking-wide group-hover:text-blue-600 dark:group-hover:text-blue-300 transition-colors duration-300" style={{ fontFamily: "'Jost', sans-serif", letterSpacing: "0.02em" }}>
               {hobby}
             </span>
           </div>
