@@ -1,538 +1,329 @@
-import { useState, useEffect } from "react";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { ExternalLink, Calendar, Users, TrendingUp } from "lucide-react";
-import { ChevronUp } from "lucide-react";
 import React from "react";
 import { ScrollFadeIn } from "@/components/ScrollFadeIn";
 
-function ScrollProgress() {
-  const [scroll, setScroll] = React.useState(0);
-  const [show, setShow] = React.useState(false);
+const projects = [
+	{
+		id: 1,
+		image:
+			"https://i.ibb.co/qw7J09L/How-to-write-a-report-pptx.png",
+		category: "Consulting",
+		title: "Business Report Writing Training",
+		description:
+			"I successfully conducted a training session titled “How to Write a Business Report?” for the Business Development team of OnnoRokom Projukti Limited. The goal was to enhance their ability to write structured, professional, and purpose-driven business reports.",
+		tags: [
+			"Report Writing",
+			"Business Communication",
+			"Training & Development",
+			"Capacity Building",
+		],
+		results: [
+			" Team can now prepare formal reports (status reports, proposal reports, analysis reports)",
+			" Boosted clarity and confidence in team communication",
+      " Enhanced overall report quality and professionalism",
+		],
+		timeline: "May 2024 - Jun 2024",
+		buttonLabel: "View Detailes",
+		buttonUrl: "https://docs.google.com/presentation/d/1gMy-gVuziMZuwya_sQ9XyKrdethr7AtS/edit?usp=sharing&ouid=100745213181824909947&rtpof=true&sd=true",
+	},
 
-  React.useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop = window.scrollY;
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const scrolled = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-      setScroll(scrolled);
-      setShow(scrollTop > 200);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+	{
+		id: 2,
+		image:
+			"https://i.ibb.co/99NDgmG7/Aman-Banner-for-blogs-Website-2-1.jpg",
+		category: "Organization Development",
+		title: "DUNS Number Procurement for OnnoRokom Group",
+		description:
+			"Led the end-to-end process to acquire DUNS numbers for OnnoRokom Group concerns including OnnoRokom Software Ltd, OnnoRokom Projukti Ltd, Udvash, Unmesh Online Care, Uttoron, and Rokomari. Managed requirement analysis, vendor coordination, pricing negotiation, and successful delivery within the targeted timeframe.",
+		tags: [
+			"Process Analysis",
+			"Vendor Communication",
+			"Pricing Negotiation",
+			"Documentation",
+		],
+		results: [
+			"DUNS numbers secured for 5 business units within 1 month",
+			"Achieved optimal pricing via negotiation with Dun & Bradstreet",
+		],
+		timeline: "Nov 2023 - Dec 2023",
+		buttonLabel: "View Detailes",
+		buttonUrl: "#",
+	},
 
-  const handleBackToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
 
-  const size = 56;
-  const stroke = 5;
-  const radius = (size - stroke) / 2;
-  const circumference = 2 * Math.PI * radius;
-  const offset = circumference - (scroll / 100) * circumference;
+	{
+    id: 3,
+    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=400&q=80",
+    category: "Technical", 
+    title: "Tag Manager Setup for OPL Website",
+    description: "Configured Google Tag Manager for the OPL website to enable advanced analytics, conversion tracking, and marketing integrations.",
+    tags: ["Google Tag Manager", "OPL Website", "Analytics", "Conversion Tracking"],
+    results: ["All key site events tracked", "Enhanced marketing data accuracy"],
+    timeline: "May 2025",
+    buttonLabel: "View Detailes",
+    buttonUrl: "#",
+  },
+  
+{
+    id: 4,
+    image: "https://i.ibb.co/5ZQ475G/Screenshot-2025-06-21-162853.png",
+    category: "Marketing & Branding Skills",
+    title: "OPL Social Media Management",
+    description: "Managed OPL's social media content, regularly posting updates and job circulars on the OPL website's social media pages. Achieved 4,300+ organic followers on LinkedIn and 700+ on Facebook. This is an ongoing project.",
+    tags: ["Social Media", "Content Management", "LinkedIn", "Facebook", "Branding"],
+    results: [
+      "LinkedIn page: 4,300+ organic followers",
+      "Facebook page: 700+ organic followers",
+      "Consistent content and job circular posting"
+    ],
+    timeline: "Ongoing",
+    buttonLabel: "View Case Study",
+    buttonUrl: "https://bd.linkedin.com/company/onnorokom-projukti-limited",
+  },
+  {
+    id: 5,
+    image: "https://i.ibb.co/wN4R7jwD/Screenshot-2025-06-21-153049.png",
+    category: "Analytical",
+    title: "Onnorokom Projukti Website Launch",
+    description: "Researched software company websites for inspiration, developed the website structure for OPL, prepared all text content, and successfully launched the Onnorokom Projukti website on January 1, 2025.",
+    tags: ["Website Structure", "Content Writing", "Market Research", "Launch"],
+    results: [
+      "Completed competitive research",
+      "Developed site structure and all content",
+      "Website launched on January 1, 2025"
+    ],
+    timeline: "Jan 2025",
+    buttonLabel: "View Case Study",
+    buttonUrl: "#",
+  },
+  {
+    id: 6,
+    image: "https://i.ibb.co/Txg3hcvS/basis-3.jpg",
+    category: "Organization Development",
+    title: "BASIS Membership Process for OPL",
+    description: "Completed the BASIS membership process for OPL by preparing the company profile, director profiles, and managing all required documentation for the application.",
+    tags: ["BASIS Membership", "Company Profile", "Director Profile", "Documentation"],
+    results: [
+      "Prepared OPL company profile",
+      "Prepared director profiles",
+      "Managed and submitted all required documents for BASIS application"
+    ],
+    timeline: "Feb 2025",
+    buttonLabel: "View Case Study",
+    buttonUrl: "#",
+  },
+  {
+    id: 7,
+    image: "https://i.ibb.co/jtDCnsr/DSC06204.jpg",
+    category: "Organization Development",
+    title: "TeamTogether 2025 Event for OPL",
+    description: "Conducted the TeamTogether 2025 program for OPL: planned the event, prepared presentations and food menu, managed the event execution, and supported team members. The event was attended by 150 employees, including the MD and Chairman, on February 27, 2025.",
+    tags: ["Event Management", "Program Planning", "Presentation", "Team Support"],
+    results: [
+      "Successfully managed TeamTogether 2025 event",
+      "Planned and executed program, presentations, and food menu",
+      "150 employees attended, including MD and Chairman"
+    ],
+    timeline: "Feb 27, 2025",
+    buttonLabel: "View Case Study",
+    buttonUrl: "#",
+  },
+  {
+    id: 8,
+    image: "https://i.ibb.co/PvJRpRD4/Whats-App-Image-2025-05-27-at-15-09-26-1.jpg",
+    category: "Organization Development",
+    title: "OPL Day Townhall Meeting 2025",
+    description: "Planned and managed the OPL Day Townhall Meeting 2025: created the program plan with teammates, prepared presentations and a video presentation for all teams, and assisted other teams in preparing their presentations. The event was held on May 27, 2025.",
+    tags: ["Event Management", "Program Planning", "Presentation", "Video Presentation", "Team Collaboration"],
+    results: [
+      "Successfully executed OPL Day Townhall Meeting 2025",
+      "Prepared and supported all team presentations and video content",
+      "Strengthened cross-team collaboration"
+    ],
+    timeline: "May 27, 2025",
+    buttonLabel: "View Case Study",
+    buttonUrl: "#",
+  },
+];
 
-  return (
-    <button
-      onClick={handleBackToTop}
-      aria-label="Back to top"
-      style={{
-        position: "fixed",
-        bottom: 32,
-        right: 32,
-        zIndex: 50,
-        background: "rgba(255,255,255,0.95)",
-        borderRadius: "50%",
-        boxShadow: "0 4px 24px 0 rgba(91,33,182,0.13)",
-        border: "none",
-        padding: 0,
-        width: size,
-        height: size,
-        display: show ? "flex" : "none",
-        alignItems: "center",
-        justifyContent: "center",
-        transition: "opacity 0.3s",
-      }}
-      className="group hover:scale-110 focus:outline-none"
-    >
-      <svg width={size} height={size}>
-        <circle
-          cx={size / 2}
-          cy={size / 2}
-          r={radius}
-          stroke="#e0e7ef"
-          strokeWidth={stroke}
-          fill="none"
-        />
-        <circle
-          cx={size / 2}
-          cy={size / 2}
-          r={radius}
-          stroke="url(#scroll-gradient)"
-          strokeWidth={stroke}
-          fill="none"
-          strokeDasharray={circumference}
-          strokeDashoffset={offset}
-          strokeLinecap="round"
-          style={{ transition: "stroke-dashoffset 0.2s" }}
-        />
-        <defs>
-          <linearGradient id="scroll-gradient" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stopColor="#2563eb" />
-            <stop offset="100%" stopColor="#9333ea" />
-          </linearGradient>
-        </defs>
-      </svg>
-      <span style={{ position: "absolute" }}>
-        <ChevronUp className="text-blue-600 group-hover:text-purple-600" size={28} />
-      </span>
-    </button>
-  );
-}
+const filterCategories = [
+	"Technical",
+	"Analytical",
+	"Organization Development",
+	"Marketing & Branding",
+	"Consulting",
+];
 
 const Portfolio = () => {
-  const [selectedCategory, setSelectedCategory] = useState("All");
+	const [selectedCategory, setSelectedCategory] = React.useState("All");
+	// Sort projects by id descending (latest first)
+	const sortedProjects = [...projects].sort((a, b) => b.id - a.id);
+	// Filter projects based on selected category
+	const filteredProjects =
+		selectedCategory === "All"
+			? sortedProjects
+			: sortedProjects.filter(
+					(project) => project.category === selectedCategory
+			  );
+	return (
+		<div
+			className="min-h-screen bg-gray-50"
+			style={{ fontFamily: "'Jost', sans-serif", fontWeight: 500 }}
+		>
+			<ScrollFadeIn>
+				{/* Hero Section */}
+				<section className="relative bg-gradient-to-br from-blue-200 via-white to-purple-200 pt-20 pb-16">
+					<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+						<div className="text-center">
+							<h1
+								className="font-extrabold uppercase bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent text-center mb-8"
+								style={{
+									fontFamily: "'Jost', sans-serif",
+									fontWeight: 700,
+									fontSize: "32px",
+								}}
+							>
+								<span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+									MY PORTFOLIO
+								</span>
+							</h1>
+							<p className="text-lg text-gray-700 max-w-2xl mx-auto">
+								Showcasing impactful projects and successful implementations
+								across organization development, digital marketing, and
+								technology.
+							</p>
+						</div>
+					</div>
+				</section>
+			</ScrollFadeIn>
 
-  const categories = [
-    "All",
-    "Technical Skills",
-    "Analytical Skills",
-    "Organization Development",
-    "Marketing & Branding Skills",
-    "Interpersonal Skills",
-    "Consulting"
-  ];
+			{/* Modern Filter Buttons */}
+			<div
+				className="w-full px-0 flex flex-wrap gap-3 justify-center border-b"
+				style={{
+					background: "#F9FAFB",
+					borderBottomColor: "rgba(0,0,0,0.08)",
+					paddingTop: "2.5rem",
+					paddingBottom: "2.5rem",
+				}}
+			>
+				<button
+					className={`px-5 py-2 rounded-md font-semibold shadow-sm border-2 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400 text-sm tracking-wide backdrop-blur-md ${
+						selectedCategory === "All"
+							? "bg-gradient-to-r from-blue-600 to-purple-600 text-white border-0 scale-105 shadow-lg"
+							: "bg-[#F9FAFB] text-blue-700 border-blue-200 hover:bg-blue-50 hover:scale-105"
+					}`}
+					style={{ minWidth: "120px" }}
+					onClick={() => setSelectedCategory("All")}
+				>
+					All
+				</button>
+				{filterCategories.map((cat) => (
+					<button
+						key={cat}
+						className={`px-5 py-2 rounded-md font-semibold shadow-sm border-2 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400 text-sm tracking-wide backdrop-blur-md ${
+							selectedCategory === cat
+								? "bg-gradient-to-r from-blue-600 to-purple-600 text-white border-0 scale-105 shadow-lg"
+								: "bg-[#F9FAFB] text-blue-700 border-blue-200 hover:bg-blue-50 hover:scale-105"
+						}`}
+						style={{ minWidth: "120px" }}
+						onClick={() => setSelectedCategory(cat)}
+					>
+						{cat}
+					</button>
+				))}
+			</div>
 
-  const projects = [
-    {
-      title: "Excel Credit Card Information Management System",
-      description: "A system for managing credit card information using Excel, developed by a 2-member team under the technical category.",
-      longDescription: "Designed and implemented a credit card information management system using Microsoft Excel and VBA. The project focused on secure data entry, automated calculations, and reporting features for efficient credit card data management. Collaborated as a 2-member team to ensure data integrity and user-friendly operation.",
-      category: "Technical Skills",
-      duration: "3 months",
-      team: "2 members",
-      impact: "Streamlined credit card data management and improved reporting accuracy.",
-      technologies: ["Excel", "VBA", "Data Management"],
-      image: "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=600&h=400&fit=crop",
-      results: [
-        "Automated credit card data entry and validation",
-        "Improved data security and accuracy",
-        "Custom reporting and analytics",
-        "User-friendly interface for non-technical users"
-      ]
-    },
-    {
-      title: "OPL Facebook & LinkedIn Page Optimization and Content Management",
-      description: "Ongoing optimization and management of OPL's Facebook and LinkedIn pages, including regular content updates and audience engagement.",
-      longDescription: "Continuously optimize and manage the official Facebook and LinkedIn pages for OnnoRokom Projukti Limited (OPL). Responsibilities include page setup, branding, SEO optimization, content planning, regular posting, and community engagement. The project is ongoing, with two team members collaborating to ensure consistent brand presence and audience growth on both platforms.",
-      category: "Marketing & Branding Skills",
-      duration: "Ongoing",
-      team: "2 members",
-      impact: "Strengthened OPL's digital presence and increased audience engagement on social platforms.",
-      technologies: ["Social Media Optimization", "Content Planning", "Branding", "Facebook", "LinkedIn", "Community Management"],
-      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&h=400&fit=crop",
-      results: [
-        "Consistent brand presence on Facebook & LinkedIn",
-        "Regular, high-quality content updates",
-        "Increased followers and engagement rates",
-        "Improved page SEO and discoverability"
-      ]
-    },
-    {
-      title: "Integrated Social Media Campaign for Product Launch",
-      description: "Developed and executed a multi-channel social media marketing campaign to launch a new product, driving brand awareness and customer engagement.",
-      longDescription: "Planned and managed an integrated marketing campaign across Facebook, Instagram, and LinkedIn for a major product launch. Responsibilities included campaign strategy, content creation, paid advertising, influencer partnerships, and analytics tracking. The campaign resulted in significant increases in brand reach, engagement, and sales conversions.",
-      category: "Marketing & Branding Skills",
-      duration: "2 months",
-      team: "4 members",
-      impact: "Boosted brand visibility and sales through targeted digital marketing.",
-      technologies: ["Social Media Marketing", "Content Creation", "Paid Advertising", "Analytics", "Influencer Marketing"],
-      image: "https://images.unsplash.com/photo-1453928582365-b6ad33cbcf64?w=600&h=400&fit=crop",
-      results: [
-        "Increased brand reach by 250%",
-        "Doubled social media engagement rates",
-        "Achieved 40% sales growth during campaign",
-        "Built strong influencer partnerships"
-      ]
-    },
-    {
-      title: "OPL Team Together & OPL Day Townhall Meeting Planning",
-      description: "Planned and managed a series of corporate events, including the OPL Day Townhall, to foster team collaboration and organizational engagement.",
-      longDescription: "Led the end-to-end planning and management of multiple events for OnnoRokom Projukti Limited (OPL), including the flagship OPL Day Townhall meeting. Responsibilities included event concept development, logistics coordination, agenda setting, team engagement activities, and on-site management. Successfully brought together all OPL teams, enhanced cross-departmental collaboration, and created a vibrant, inclusive corporate culture through well-executed events.",
-      category: "Organization Development",
-      duration: "1 month",
-      team: "6 members",
-      impact: "Strengthened team spirit, improved communication, and increased employee engagement across the organization.",
-      technologies: ["Event Planning", "Team Management", "Logistics Coordination", "Corporate Communication"],
-      image: "https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?w=600&h=400&fit=crop",
-      results: [
-        "Successful OPL Day Townhall with high participation",
-        "Seamless event execution and logistics",
-        "Boosted team morale and collaboration",
-        "Positive feedback from all departments"
-      ]
-    },
-    {
-      title: "DUNS Number Certification for OnnoRokom Group Branches",
-      description: "Successfully obtained DUNS Number certification for multiple OnnoRokom Group branches, streamlining global business identity and compliance.",
-      longDescription: "Managed the end-to-end process of acquiring DUNS Number certification for OnnoRokom Projukti Limited (OPL), Udvash Unmesh, Online Care, Uttoron, Rokomari, and OnnoRokom Software. Responsibilities included gathering and verifying legal and business documentation, coordinating with D&B, and ensuring accurate data submission for each branch. Overcame unique challenges for each entity and delivered all certifications within a tight deadline, enabling the group to participate in international business and digital platforms.",
-      category: "Organization Development",
-      duration: "1 month",
-      team: "Solo project",
-      impact: "Enabled global business opportunities and improved compliance for all branches.",
-      technologies: ["Business Documentation", "Compliance Management", "Process Coordination", "Data Verification"],
-      image: "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?w=600&h=400&fit=crop",
-      results: [
-        "DUNS Number certification obtained for 6 branches",
-        "Improved international business credibility",
-        "Streamlined compliance documentation",
-        "Faster onboarding to global platforms"
-      ]
-    },
-    {
-      title: "Executive Coaching Program",
-      description: "Provided executive coaching services to C-level executives, resulting in enhanced leadership effectiveness and strategic decision-making.",
-      longDescription: "Delivered personalized coaching to senior executives focusing on leadership development, strategic thinking, and organizational impact. The program included 360-degree feedback, goal setting, and ongoing support.",
-      category: "Consulting",
-      duration: "12 months",
-      team: "3 members",
-      impact: "95% satisfaction rate",
-      technologies: ["Executive Assessment", "Leadership Development", "360 Feedback"],
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=400&fit=crop",
-      results: [
-        "95% client satisfaction",
-        "80% achievement of leadership goals",
-        "100% client retention",
-        "Significant organizational impact"
-      ]
-    },
-    {
-      title: "Career Development Program",
-      description: "Designed and executed comprehensive career development framework for 500+ employees across multiple departments.",
-      longDescription: "Created a structured career development program including skills assessment, personalized learning paths, mentorship matching, and performance tracking. The program addressed individual career goals while aligning with organizational objectives.",
-      category: "Interpersonal Skills",
-      duration: "6 months",
-      team: "12 members",
-      impact: "85% participation rate",
-      technologies: ["Learning Management System", "Skills Assessment", "Mentorship Platform"],
-      image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&h=400&fit=crop",
-      results: [
-        "85% employee participation",
-        "92% satisfaction rating",
-        "45% internal promotion rate",
-        "30% reduction in turnover"
-      ]
-    },
-    {
-      title: "E-commerce Growth Strategy",
-      description: "Developed and implemented digital marketing strategy for e-commerce startup, achieving 300% revenue growth in 18 months.",
-      longDescription: "Comprehensive digital strategy including SEO optimization, social media marketing, influencer partnerships, and conversion rate optimization. Focused on building brand awareness and driving sustainable growth.",
-      category: "Marketing & Branding Skills",
-      duration: "18 months",
-      team: "6 members",
-      impact: "300% revenue growth",
-      technologies: ["SEO", "Social Media Marketing", "PPC", "Analytics"],
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop",
-      results: [
-        "300% revenue increase",
-        "250% website traffic growth",
-        "180% social media engagement",
-        "120% customer retention improvement"
-      ]
-    },
-    {
-      title: "Digital Transformation Strategy",
-      description: "Led comprehensive digital transformation initiative for a leading manufacturing company, resulting in 40% operational efficiency improvement.",
-      longDescription: "This project involved analyzing existing processes, identifying digital opportunities, and implementing a phased transformation plan. Key achievements included automation of 15 manual processes, implementation of data analytics dashboard, and training 200+ employees on new digital tools.",
-      category: "Organization Development",
-      duration: "12 months",
-      team: "15 members",
-      impact: "40% efficiency increase",
-      technologies: ["Process Automation", "Data Analytics", "Change Management"],
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
-      results: [
-        "Reduced processing time by 40%",
-        "Increased employee satisfaction by 25%",
-        "Saved $150K annually in operational costs",
-        "Improved data accuracy by 60%"
-      ]
-    },
-    {
-      title: "Data-Driven Market Research",
-      description: "Conducted comprehensive market research and analysis for a new product launch.",
-      longDescription: "Utilized advanced data analysis techniques to identify market trends, customer preferences, and competitive landscape. Delivered actionable insights that shaped the product strategy and go-to-market plan.",
-      category: "Analytical Skills",
-      duration: "3 months",
-      team: "4 members",
-      impact: "Successful product launch",
-      technologies: ["Data Analysis", "Research", "Excel", "Power BI"],
-      image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=600&h=400&fit=crop",
-      results: [
-        "Identified key market opportunities",
-        "Improved product positioning",
-        "Increased launch success rate"
-      ]
-    },
-    {
-      title: "Power BI Business Dashboard",
-      description: "Developed an interactive Power BI dashboard for real-time business analytics and reporting.",
-      longDescription: "Designed and implemented a Power BI dashboard integrating multiple data sources, providing actionable insights for management. Automated reporting reduced manual work and improved decision-making.",
-      category: "Technical Skills",
-      duration: "4 months",
-      team: "5 members",
-      impact: "Improved decision-making",
-      technologies: ["Power BI", "Data Visualization", "Automation"],
-      image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&h=400&fit=crop",
-      results: [
-        "Automated reporting",
-        "Faster business decisions",
-        "Increased data accuracy"
-      ]
-    },
-    {
-      title: "OnnoRokom Projukti Limited Website Structure",
-      description: "Planned, structured, and prepared all content for the official website of OnnoRokom Projukti Limited, focusing on user experience, information architecture, and analytics integration.",
-      longDescription: "Led the planning, structure, and content development for the OnnoRokom Projukti Limited website. Responsibilities included requirements analysis, site mapping, wireframing, content writing for all pages, and integrating analytics tools to monitor user behavior and optimize content strategy. The project resulted in a modern, user-friendly, and data-driven website with high-quality, SEO-friendly content.",
-      category: "Analytical Skills",
-      duration: "2 months",
-      team: "6 members",
-      impact: "Enhanced user experience, content quality, and analytics-driven content strategy",
-      technologies: ["Website Structure Planning", "Content Writing", "Content Strategy", "Google Analytics", "UX Design", "Information Architecture"],
-      image: "https://images.unsplash.com/photo-1513258496099-48168024aec0?w=600&h=400&fit=crop",
-      results: [
-        "Improved user navigation",
-        "Increased engagement",
-        "Actionable analytics insights",
-        "Enhanced content discoverability",
-        "High-quality, SEO-friendly website content"
-      ],
-      link: "https://onnorokomprojukti.com/"
-    }
-  ];
-
-  const filteredProjects = selectedCategory === "All" 
-    ? projects 
-    : projects.filter(project => project.category === selectedCategory);
-
-  const [selectedProject, setSelectedProject] = useState(null);
-
-  // Prevent background scroll when modal is open
-  useEffect(() => {
-    if (selectedProject) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
-    return () => {
-      document.body.style.overflow = "";
-    };
-  }, [selectedProject]);
-
-  return (
-    <div className="min-h-screen" style={{ fontFamily: "'Jost', sans-serif", fontWeight: 500 }}>
-      <ScrollFadeIn>
-        {/* Hero Section */}
-        <section className="relative bg-gradient-to-br from-blue-200 via-white to-purple-200 pt-20 pb-32">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center">
-              <h1
-                className="font-extrabold uppercase bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent text-center mb-12"
-                style={{
-                  fontFamily: "'Jost', sans-serif",
-                  fontWeight: 700,
-                  fontSize: "36px",
-                }}
-              >
-                <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                  MY PORTFOLIO
-                </span>
-              </h1>
-              <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-                Showcasing impactful projects and successful implementations across
-                organization development, digital marketing, and technology.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Category Filter */}
-        <section className="py-8 bg-white border-b">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-wrap justify-center gap-4">
-              {categories.map((category) => (
-                <Button
-                  key={category}
-                  onClick={() => setSelectedCategory(category)}
-                  className={
-                    (selectedCategory === category
-                      ? "bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white border-0 shadow-md font-semibold"
-                      : "border-2 border-blue-200 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 hover:text-white transition-all font-semibold")
-                  + " transform transition-transform duration-300 hover:scale-105 focus:scale-105"
-                  }
-                  style={selectedCategory !== category ? { WebkitTextFillColor: 'transparent' } : {}}
-                >
-                  {category}
-                </Button>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Projects Grid */}
-        <section className="py-16">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {filteredProjects.map((project, index) => (
-                <Card key={index} className="hover:shadow-2xl transition-all duration-300 cursor-pointer group border-0 bg-white overflow-hidden">
-                  <div className="relative overflow-hidden">
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    <div className="absolute top-4 right-4">
-                      <Badge variant="secondary" className="bg-white/90 backdrop-blur-sm shadow-lg border-0">
-                        {project.category}
-                      </Badge>
-                    </div>
-                  </div>
-                  <CardHeader className="pb-4">
-                    <CardTitle className="text-xl group-hover:text-blue-600 transition-colors">
-                      {project.title}
-                    </CardTitle>
-                    <CardDescription className="line-clamp-2">{project.description}</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="space-y-4">
-                      <div className="flex items-center justify-between text-sm text-gray-600">
-                        <div className="flex items-center space-x-1">
-                          <Calendar className="h-4 w-4" />
-                          <span>{project.duration}</span>
-                        </div>
-                        <div className="flex items-center space-x-1">
-                          <Users className="h-4 w-4" />
-                          <span>{project.team}</span>
-                        </div>
-                      </div>
-                      <div className="flex items-center space-x-1 text-sm">
-                        <TrendingUp className="h-4 w-4 text-green-600" />
-                        <span className="font-medium text-green-600">{project.impact}</span>
-                      </div>
-                      <div className="flex flex-wrap gap-2">
-                        {project.technologies.slice(0, 3).map((tech, techIndex) => (
-                          <Badge key={techIndex} variant="outline" className="text-xs border-gray-200">
-                            {tech}
-                          </Badge>
-                        ))}
-                      </div>
-                      <Button 
-                        variant="outline" 
-                        className="w-full group-hover:bg-blue-600 group-hover:text-white transition-colors"
-                        onClick={() => setSelectedProject(project)}
-                      >
-                        View Details <ExternalLink className="ml-2 h-4 w-4" />
-                      </Button>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Project Detail Modal Popup */}
-        {selectedProject && (
-          <div
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/40"
-            onClick={() => setSelectedProject(null)}
-          >
-            <div
-              className="bg-white rounded-lg shadow-2xl max-w-4xl w-full mx-4 overflow-y-auto max-h-[90vh] relative animate-fadeIn"
-              onClick={e => e.stopPropagation()}
-            >
-              <button
-                className="absolute top-4 right-4 text-gray-400 hover:text-gray-700 text-2xl font-bold"
-                onClick={() => setSelectedProject(null)}
-                aria-label="Close"
-              >
-                ×
-              </button>
-              <div className="px-6 py-8">
-                <div className="text-center mb-8">
-                  <Button
-                    variant="outline"
-                    onClick={() => setSelectedProject(null)}
-                    className="mb-4"
-                  >
-                    ← Back to Portfolio
-                  </Button>
-                  <h2 className="text-3xl font-bold text-gray-900 mb-4">{selectedProject.title}</h2>
-                  <Badge variant="secondary" className="mb-4">{selectedProject.category}</Badge>
-                </div>
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                  <div>
-                    <img
-                      src={selectedProject.image}
-                      alt={selectedProject.title}
-                      className="w-full h-64 object-cover rounded-lg"
-                    />
-                  </div>
-                  <div className="space-y-6">
-                    <div>
-                      <h3 className="text-xl font-semibold mb-2">Project Overview</h3>
-                      <p className="text-gray-600">{selectedProject.longDescription}</p>
-                    </div>
-                    <div className="grid grid-cols-3 gap-4 text-center">
-                      <div>
-                        <Calendar className="h-8 w-8 mx-auto mb-2 text-blue-600" />
-                        <p className="font-medium">{selectedProject.duration}</p>
-                        <p className="text-sm text-gray-600">Duration</p>
-                      </div>
-                      <div>
-                        <Users className="h-8 w-8 mx-auto mb-2 text-blue-600" />
-                        <p className="font-medium">{selectedProject.team}</p>
-                        <p className="text-sm text-gray-600">Team Size</p>
-                      </div>
-                      <div>
-                        <TrendingUp className="h-8 w-8 mx-auto mb-2 text-green-600" />
-                        <p className="font-medium">{selectedProject.impact}</p>
-                        <p className="text-sm text-gray-600">Impact</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
-                  <div>
-                    <h3 className="text-xl font-semibold mb-4">Technologies Used</h3>
-                    <div className="flex flex-wrap gap-2">
-                      {selectedProject.technologies.map((tech, index) => (
-                        <Badge key={index} variant="secondary">{tech}</Badge>
-                      ))}
-                    </div>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold mb-4">Key Results</h3>
-                    <ul className="space-y-2">
-                      {selectedProject.results.map((result, index) => (
-                        <li key={index} className="flex items-start space-x-2">
-                          {/* Replace bullet with TrendingUp icon */}
-                          <TrendingUp className="w-4 h-4 text-blue-600 mt-1 flex-shrink-0" />
-                          <span className="text-gray-600">{result}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
-      </ScrollFadeIn>
-      <ScrollProgress />
-    </div>
-  );
+			{/* Portfolio Case Study Cards */}
+			<section className="py-8">
+				<div className="max-w-5xl mx-auto flex flex-col gap-8 px-4">
+					{filteredProjects.map((project) => (
+						<div
+							key={project.id}
+							className="bg-white rounded-md shadow-md hover:shadow-lg transition-shadow border border-gray-100 flex flex-col md:flex-row w-full"
+						>
+							{/* Left: Image */}
+							<div className="md:w-2/5 w-full flex-shrink-0">
+								<img
+									src={project.image}
+									alt={project.title}
+									className="object-cover w-full h-44 md:h-full rounded-t-md md:rounded-l-md md:rounded-tr-none"
+								/>
+							</div>
+							{/* Right: Content */}
+							<div className="md:w-3/5 w-full flex flex-col p-4">
+								<span className="text-[15px] font-semibold text-green-600 uppercase mb-1 tracking-wide">
+									{project.category}
+								</span>
+								<h2
+									className="font-bold text-blue-800 mb-1"
+									style={{ fontSize: "22px" }}
+								>
+									{project.title}
+								</h2>
+								<p className="text-[15px] text-gray-700 mb-2">
+									{project.description}
+								</p>
+								{/* Tags */}
+								<div className="flex flex-wrap gap-2 mb-2">
+									{project.tags.map((tag, idx) => (
+										<span
+											key={idx}
+											className="bg-blue-100 text-blue-700 text-[15px] px-2 py-0.5 rounded font-medium"
+										>
+											{tag}
+										</span>
+									))}
+								</div>
+								{/* Results */}
+								<div className="bg-green-50 border-l-4 border-green-400 text-green-800 p-2 rounded mb-2">
+									{project.results.map((result, idx) => (
+										<div key={idx} className="flex items-start gap-2">
+											<span className="text-green-500 font-bold text-[15px]">
+												✔
+											</span>
+											<span className="text-[15px]">{result}</span>
+										</div>
+									))}
+								</div>
+								{/* Timeline */}
+								<div className="text-[15px] text-gray-500 mb-3 flex items-center gap-2">
+									<svg
+										className="w-4 h-4 text-blue-500"
+										fill="none"
+										viewBox="0 0 24 24"
+										stroke="currentColor"
+										strokeWidth="2"
+									>
+										<path
+											strokeLinecap="round"
+											strokeLinejoin="round"
+											d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+										/>
+									</svg>
+									<span className="font-semibold text-gray-700">
+										Timeline:
+									</span>{" "}
+									{project.timeline}
+								</div>
+								{/* Action Button */}
+								<div className="mt-auto">
+									<a
+										href={project.buttonUrl}
+										target="_blank"
+										rel="noopener noreferrer"
+										className="inline-block bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold py-2 px-5 rounded-md shadow transition-colors focus:outline-none focus:ring-2 focus:ring-blue-400 text-sm tracking-wide"
+										style={{ minWidth: "120px" }}
+									>
+										{project.buttonLabel}
+									</a>
+								</div>
+							</div>
+						</div>
+					))}
+				</div>
+			</section>
+		</div>
+	);
 };
 
 export default Portfolio;
